@@ -23,7 +23,7 @@ class TestBaseModel(unittest.TestCase):
 
     def test_ini_tim(self):
         bm1 = BaseModel()
-        self.assertEqual(len(str(bm1.created_at)), len(str(bm1.updated_at)))
+        self.assertEqual(bm1.created_at, bm1.updated_at)
 
     def test_sav_upd_met(self):
         bm1 = BaseModel()
