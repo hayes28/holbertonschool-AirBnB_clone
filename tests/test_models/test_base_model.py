@@ -37,6 +37,8 @@ class TestBaseModel(unittest.TestCase):
         bm1 = BaseModel()
         richard = bm1.to_dict()
         self.assertIsInstance(richard, dict)
+        self.assertIsInstance(richard["updated_at"], str)
+        self.assertIsInstance(richard["created_at"], str)
 
 if __name__ == "__main__":
     unittest.main()
