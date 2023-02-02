@@ -40,5 +40,9 @@ class TestBaseModel(unittest.TestCase):
         self.assertIsInstance(richard["updated_at"], str)
         self.assertIsInstance(richard["created_at"], str)
 
+    def test_str_met(self):
+        bm1 = BaseModel()
+        self.assertIn(bm1.id, str(bm1))
+
 if __name__ == "__main__":
     unittest.main()
