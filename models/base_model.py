@@ -23,8 +23,6 @@ class BaseModel:
         """NEW RICHARD"""
         new_richard = self.__dict__.copy()
         new_richard["__class__"] = self.__class__.__name__
-        new_richard["created at"] = self.created_at.isoformat()
-        new_richard["updated at"] = self.updated_at.isoformat()
-        new_richard.pop("created_at", None)
-        new_richard.pop("updated_at", None)
+        new_richard["created_at"] = self.created_at.isoformat()
+        new_richard["updated_at"] = self.updated_at.isoformat()
         return new_richard
