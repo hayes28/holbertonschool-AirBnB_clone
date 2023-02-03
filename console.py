@@ -1,6 +1,10 @@
+#!/usr/bin/python3
+"""console module"""
 import cmd
 
+
 class HBNBCommand(cmd.Cmd):
+    """HBNB Com Class"""
     prompt = '(hbnb) '
 
     def do_quit(self, line):
