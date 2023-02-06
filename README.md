@@ -11,7 +11,7 @@ By entering `./console.py` in the terminal a prompt will open up where the user 
 ### Interactive Mode:
 ![Screenshot 2023-02-05 195845](https://user-images.githubusercontent.com/107968573/216865079-bae04d78-5162-496e-be7d-9f55719873ff.png)
 ### Non-Interactive Mode:
-![Screenshot 2023-02-05 200301](https://user-images.githubusercontent.com/107968573/216865604-01de94ad-1c7c-4e6c-ac06-caef81c48166.png)
+![Screenshot 2023-02-05 200301](https://user-images.githubusercontent.com/107968573/216865604-01de94ad-1c7c-4e6c-ac06-caef81c48166.png)<br />
 Exiting the console is as easy as Ctrl+D or the `EOF` command.
 
 ## Authors
