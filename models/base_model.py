@@ -13,7 +13,8 @@ class BaseModel:
                 if ky != '__class__':
                     setattr(self, ky, vl)
                     if ky in ('created_at', 'updated_at'):
-                        setattr(self, ky, datetime.datetime.strptime(vl, '%Y-%m-%dT%H:%M:%S.%f'))
+                        setattr(self, ky, datetime.datetime.
+                                strptime(vl, '%Y-%m-%dT%H:%M:%S.%f'))
         else:
             self.id = str(uuid.uuid4())
             self.created_at = self.updated_at = datetime.datetime.now()

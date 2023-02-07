@@ -3,6 +3,7 @@ import uuid
 from datetime import datetime
 from models.base_model import BaseModel
 
+
 class TestBaseModel(unittest.TestCase):
     """TASK 1 UNIT TESTS"""
     def test_bas_mod_id(self):
@@ -45,6 +46,7 @@ class TestBaseModel(unittest.TestCase):
         bm1 = BaseModel()
         self.assertIn(bm1.id, str(bm1))
 
+
 class TestBaseModel2(unittest.TestCase):
     "TASK 2 UNIT TESTS"
     def test_init_with_kwargs(self):
@@ -58,8 +60,10 @@ class TestBaseModel2(unittest.TestCase):
         }
         bm1 = BaseModel(**richard1)
         self.assertEqual(bm1.id, 'villager')
-        self.assertEqual(bm1.created_at, datetime.strptime(created_at, '%Y-%m-%dT%H:%M:%S.%f'))
-        self.assertEqual(bm1.updated_at, datetime.strptime(updated_at, '%Y-%m-%dT%H:%M:%S.%f'))
+        self.assertEqual(bm1.created_at,
+                         datetime.strptime(created_at, '%Y-%m-%dT%H:%M:%S.%f'))
+        self.assertEqual(bm1.updated_at,
+                         datetime.strptime(updated_at, '%Y-%m-%dT%H:%M:%S.%f'))
         self.assertEqual(bm1.name, 'uwu')
 
 if __name__ == "__main__":
