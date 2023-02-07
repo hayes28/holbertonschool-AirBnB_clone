@@ -113,7 +113,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** value missing **")
                 return
         if args[0] not in HBNBCommand.cls_lst:
-            print("** class doesnt exist **")
+            print("** class doesn't exist **")
             return
         key = "{}.{}".format(args[0], args[1])
         target = storage.all().get(key)
