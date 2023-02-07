@@ -14,7 +14,8 @@ from models.review import Review
 class HBNBCommand(cmd.Cmd):
     """HBNB Com Class"""
     prompt = '(hbnb) '
-    cls_lst = ["Review", "Place", "State", "User", "BaseModel", "City", "Amenity"]
+    cls_lst = ["Review", "Place", "State",
+               "User", "BaseModel", "City", "Amenity"]
 
     def do_quit(self, line):
         """escape hatch"""
