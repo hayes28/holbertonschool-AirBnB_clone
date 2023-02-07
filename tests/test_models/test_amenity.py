@@ -18,5 +18,6 @@ class TestAmenityModel(unittest.TestCase):
         self.assertIn("name", dir(Amenity()))
         self.assertNotIn("name", pool.__dict__)
 
+
 if __name__ == "__main__":
     unittest.main()
