@@ -30,7 +30,8 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, line):
-        if line == "":
+        arg_str = line.split()
+        if len(arg_str) == 0:
             print("** class name missing **")
             return
         if line not in HBNBCommand.cls_lst:
