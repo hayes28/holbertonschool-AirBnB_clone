@@ -94,7 +94,7 @@ class HBNBCommand(cmd.Cmd):
         if line in HBNBCommand.cls_lst:
             print([str(ii) for ik, ii in storage.all().items() if line in ik])
         else:
-            print("** class doesnt exist **")
+            print("** class doesn't exist **")
 
     def do_update(self, line):
         args = line.split(maxsplit=3)
