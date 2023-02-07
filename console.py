@@ -32,6 +32,7 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, line):
+        """for to create"""
         arg_str = line.split()
         if len(arg_str) == 0:
             print("** class name missing **")
@@ -48,6 +49,7 @@ class HBNBCommand(cmd.Cmd):
             pass
 
     def do_show(self, line):
+        """for to show"""
         if line == "":
             print("** class name missing **")
             return
@@ -68,6 +70,7 @@ class HBNBCommand(cmd.Cmd):
         print(obj)
 
     def do_destroy(self, line):
+        """bombomb"""
         if not line:
             print("** class name missing **")
             return
@@ -89,6 +92,7 @@ class HBNBCommand(cmd.Cmd):
         return
 
     def do_all(self, line):
+        """show us da tingz"""
         if line == "":
             print([str(ii) for ii in storage.all().values()])
             return
@@ -98,6 +102,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def do_update(self, line):
+        """for can has update"""
         args = line.split(maxsplit=3)
         num_args = len(args)
         if num_args < 4:
