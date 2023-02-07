@@ -6,6 +6,7 @@ import os
 from datetime import datetime
 from models.user import User
 
+
 class TestUserModel(unittest.TestCase):
     """TASK 9 UNIT TESTS"""
     def test_init(self):
