@@ -24,5 +24,6 @@ class TestReviewModel(unittest.TestCase):
         self.assertIn("user_id", dir(Review()))
         self.assertNotIn("user_id", villager_noise.__dict__)
 
+
 if __name__ == "__main__":
     unittest.main()
