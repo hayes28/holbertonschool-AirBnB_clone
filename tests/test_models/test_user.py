@@ -24,5 +24,6 @@ class TestUserModel(unittest.TestCase):
     def test_lname_pub(self):
         self.assertEqual(str, type(User.last_name))
 
+
 if __name__ == "__main__":
     unittest.main()
