@@ -34,7 +34,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
         class_name = line.split()[0]
-        if class_name not in globals():
+        if class_name not in HBNBCommand.cls_lst:
             print("** class doesn't exist **")
             return
         new_obj = eval(class_name + "()")
