@@ -77,7 +77,7 @@ class HBNBCommand(cmd.Cmd):
             return
         cname, uwuid = args[0], args[1]
         if cname not in HBNBCommand.cls_lst:
-            print("** class doesnt exist **")
+            print("** class doesn't exist **")
             return
         target = "{}.{}".format(cname, uwuid)
         if target not in storage.all().keys():
