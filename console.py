@@ -82,6 +82,7 @@ class HBNBCommand(cmd.Cmd):
         target = "{}.{}".format(cname, uwuid)
         if target not in storage.all().keys():
             print("** no instance found **")
+            return
         stor_rich = storage.all()
         del stor_rich["{}.{}".format(cname, uwuid)]
         storage.save()
