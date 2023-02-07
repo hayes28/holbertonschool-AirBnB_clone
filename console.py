@@ -28,7 +28,7 @@ class HBNBCommand(cmd.Cmd):
         """no do stuff if empty line"""
         pass
 
-    def create(self, line):
+    def do_create(self, line):
         if line == "":
             print("** class name missing **")
             return
