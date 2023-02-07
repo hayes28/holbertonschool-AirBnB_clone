@@ -49,5 +49,6 @@ class TestFileStorage(unittest.TestCase):
         if os.path.exists(self.file_path):
             os.remove(self.file_path)
 
+
 if __name__ == "__main__":
     unittest.main()
