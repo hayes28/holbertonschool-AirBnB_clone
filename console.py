@@ -72,15 +72,15 @@ class HBNBCommand(cmd.Cmd):
         if len(args) < 2:
             print("** instance id missing **")
             return
-        cname = args[0]
-        uwuid = args[1]
+        cname, uwuid = args[0], args[1]
         if cname not in HBNBCommand.cls_lst:
             print("** class doesnt exist **")
             return
         target = "{}.{}".format(cname, uwuid)
         if target not in storage.all().keys():
             print("** no instance found **")
-        storage.remove(target)
+        stor_rich = storage.all()
+        del stor_rich["{}.{}".format(cname, uwuid)]
         storage.save()
         return
 
