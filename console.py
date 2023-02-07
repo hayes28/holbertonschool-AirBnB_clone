@@ -16,6 +16,7 @@ class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
     cls_lst = ["Review", "Place", "State",
                "User", "BaseModel", "City", "Amenity"]
+    res_att = ["created_at", "updated_at", "id"]
 
     def do_quit(self, line):
         """escape hatch"""
@@ -118,6 +119,8 @@ class HBNBCommand(cmd.Cmd):
         target = storage.all().get(key)
         if target is None:
             print("** no instance found **")
+            return
+        if args[2] in HBNBCommand.res_att:
             return
         try:
             setattr(target, args[2], eval(args[3]))
