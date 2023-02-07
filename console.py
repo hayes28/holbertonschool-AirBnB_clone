@@ -14,6 +14,7 @@ from models.review import Review
 class HBNBCommand(cmd.Cmd):
     """HBNB Com Class"""
     prompt = '(hbnb) '
+    cls_lst = ["Review", "Place", "State", "User", "BaseModel", "City", "Amenity"]
 
     def do_quit(self, line):
         """escape hatch"""
@@ -70,8 +71,7 @@ class HBNBCommand(cmd.Cmd):
             return
         cname = args[0]
         uwuid = args[1]
-        cls_lst = ["Review", "Place", "State", "User", "BaseModel", "City", "Amenity"]
-        if cname not in cls_lst:
+        if cname not in HBNBCommand.cls_lst:
             print("** class doesnt exist **")
             return
         target = "{}.{}".format(cname, uwuid)
@@ -85,11 +85,39 @@ class HBNBCommand(cmd.Cmd):
         if line == "":
             print([str(ii) for ii in storage.all().values()])
             return
-        cls_lst = ["Review", "Place", "State", "User", "BaseModel", "City", "Amenity"]
-        if line in cls_lst:
+        if line in HBNBCommand.cls_lst:
             print([str(ii) for ik, ii in storage.all().items() if line in ik])
         else:
             print("** class doesnt exist **")
+
+    def do_update(self, line):
+        args = line.split(maxsplit=3)
+        num_args = len(args)
+        if num_args < 4:
+            if num_args == 0:
+                print("class name missing")
+                return
+            elif num_args == 1:
+                print("instance id missing")
+                return
+            elif num_args == 2:
+                print("attribute name missing")
+                return
+            elif num_args == 3:
+                print("value missing")
+                return
+        if args[0] not in HBNBCommand.supported_classes:
+            print("** class doesnt exist **")
+            return
+        key = "{}.{}".format(args[0], args[1])
+        target = storage.all().get(key)
+        if target is None:
+            print("** no instance found **")
+            return
+        try:
+            setattr(target, args[2], eval(args[3]))
+        except Exception as er:
+            print(er)
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
