@@ -16,7 +16,6 @@ class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
     cls_lst = ["Review", "Place", "State",
                "User", "BaseModel", "City", "Amenity"]
-    res_att = ["created_at", "updated_at", "id"]
 
     def do_quit(self, line):
         """escape hatch"""
@@ -127,6 +126,7 @@ class HBNBCommand(cmd.Cmd):
             setattr(target, args[2], eval(args[3]))
         except Exception as er:
             print(er)
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
