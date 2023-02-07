@@ -109,7 +109,7 @@ class HBNBCommand(cmd.Cmd):
             elif num_args == 3:
                 print("** value missing **")
                 return
-        if args[0] not in HBNBCommand.supported_classes:
+        if args[0] not in HBNBCommand.cls_lst:
             print("** class doesnt exist **")
             return
         key = "{}.{}".format(args[0], args[1])
