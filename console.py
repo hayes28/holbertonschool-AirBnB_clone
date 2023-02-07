@@ -75,11 +75,21 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesnt exist **")
             return
         target = "{}.{}".format(cname, uwuid)
-        if target not in storage.all():
+        if target not in storage.all().keys():
             print("** no instance found **")
         storage.remove(target)
         storage.save()
         return
+
+    def do_all(self, line):
+        if line == "":
+            print([str(ii) for ii in storage.all().values()])
+            return
+        cls_lst = ["Review", "Place", "State", "User", "BaseModel", "City", "Amenity"]
+        if line in cls_lst:
+            print([str(ii) for ik, ii in storage.all().items() if line in ik])
+        else:
+            print("** class doesnt exist **")
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
