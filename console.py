@@ -14,7 +14,9 @@ from models.review import Review
 class HBNBCommand(cmd.Cmd):
     """HBNB Com Class"""
     prompt = '(hbnb) '
-    cls_lst = ["Review", "Place", "State", "User", "BaseModel", "City", "Amenity"]
+    cls_lst = ["Review", "Place", "State",
+               "User", "BaseModel", "City", "Amenity"]
+    res_att = ["created_at", "updated_at", "id"]
 
     def do_quit(self, line):
         """escape hatch"""
@@ -30,7 +32,8 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, line):
-        if line == "":
+        arg_str = line.split()
+        if len(arg_str) == 0:
             print("** class name missing **")
             return
         if line not in HBNBCommand.cls_lst:
@@ -52,12 +55,12 @@ class HBNBCommand(cmd.Cmd):
         if len(args) < 2:
             print("** instance id missing **")
             return
-        class_name, id = args[0], args[1]
+        class_name, iid = args[0], args[1]
         if class_name not in HBNBCommand.cls_lst:
             print("** class doesn't exist **")
             return
         objects = models.storage.all()
-        key = "{}.{}".format(class_name, id)
+        key = "{}.{}".format(class_name, iid)
         if key not in objects:
             print("** no instance found **")
             return
@@ -74,11 +77,12 @@ class HBNBCommand(cmd.Cmd):
             return
         cname, uwuid = args[0], args[1]
         if cname not in HBNBCommand.cls_lst:
-            print("** class doesnt exist **")
+            print("** class doesn't exist **")
             return
         target = "{}.{}".format(cname, uwuid)
         if target not in storage.all().keys():
             print("** no instance found **")
+            return
         stor_rich = storage.all()
         del stor_rich["{}.{}".format(cname, uwuid)]
         storage.save()
@@ -91,7 +95,7 @@ class HBNBCommand(cmd.Cmd):
         if line in HBNBCommand.cls_lst:
             print([str(ii) for ik, ii in storage.all().items() if line in ik])
         else:
-            print("** class doesnt exist **")
+            print("** class doesn't exist **")
 
     def do_update(self, line):
         args = line.split(maxsplit=3)
@@ -110,12 +114,14 @@ class HBNBCommand(cmd.Cmd):
                 print("** value missing **")
                 return
         if args[0] not in HBNBCommand.cls_lst:
-            print("** class doesnt exist **")
+            print("** class doesn't exist **")
             return
         key = "{}.{}".format(args[0], args[1])
         target = storage.all().get(key)
         if target is None:
             print("** no instance found **")
+            return
+        if args[2] in HBNBCommand.res_att:
             return
         try:
             setattr(target, args[2], eval(args[3]))

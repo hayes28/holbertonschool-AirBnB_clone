@@ -6,6 +6,7 @@ import json
 from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
 
+
 class TestFileStorage(unittest.TestCase):
     """file storage uwunit tests"""
     def setUp(self):
@@ -31,7 +32,8 @@ class TestFileStorage(unittest.TestCase):
         self.file_storage.save()
         with open(self.file_path, "r") as file:
             file_content = json.load(file)
-        self.assertEqual(obj.to_dict(), file_content["BaseModel.{}".format(obj.id)])
+        self.assertEqual(obj.to_dict(),
+                         file_content["BaseModel.{}".format(obj.id)])
 
     def test_reload(self):
         obj = BaseModel()
@@ -40,7 +42,8 @@ class TestFileStorage(unittest.TestCase):
         self.file_storage.__objects = {}
         self.file_storage.reload()
         objects = self.file_storage.all()
-        self.assertEqual(obj.to_dict(), objects["BaseModel.{}".format(obj.id)].to_dict())
+        self.assertEqual(obj.to_dict(),
+                         objects["BaseModel.{}".format(obj.id)].to_dict())
 
     def tearDown(self):
         if os.path.exists(self.file_path):
