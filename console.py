@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """console module"""
 import cmd
-import models.base_model
+from models.base_model import *
 from models import storage
 from models.user import User
 from models.state import State
@@ -33,13 +33,16 @@ class HBNBCommand(cmd.Cmd):
         if line == "":
             print("** class name missing **")
             return
-        class_name = line.split()[0]
-        if class_name not in HBNBCommand.cls_lst:
+        if line not in HBNBCommand.cls_lst:
             print("** class doesn't exist **")
             return
-        new_obj = eval(class_name + "()")
-        new_obj.save()
-        print(new_obj.id)
+        try:
+            cls = eval(line)()
+            cls.save()
+            print(cls.id)
+            return
+        except (NameError, AttributeError):
+            pass
 
     def do_show(self, line):
         if line == "":
