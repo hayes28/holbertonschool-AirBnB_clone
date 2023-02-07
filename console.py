@@ -95,16 +95,16 @@ class HBNBCommand(cmd.Cmd):
         num_args = len(args)
         if num_args < 4:
             if num_args == 0:
-                print("class name missing")
+                print("** class name missing **")
                 return
             elif num_args == 1:
-                print("instance id missing")
+                print("** instance id missing **")
                 return
             elif num_args == 2:
-                print("attribute name missing")
+                print("** attribute name missing **")
                 return
             elif num_args == 3:
-                print("value missing")
+                print("** value missing **")
                 return
         if args[0] not in HBNBCommand.supported_classes:
             print("** class doesnt exist **")
