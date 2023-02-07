@@ -66,5 +66,6 @@ class TestBaseModel2(unittest.TestCase):
                          datetime.strptime(updated_at, '%Y-%m-%dT%H:%M:%S.%f'))
         self.assertEqual(bm1.name, 'uwu')
 
+
 if __name__ == "__main__":
     unittest.main()
