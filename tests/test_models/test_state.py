@@ -6,6 +6,7 @@ import os
 from datetime import datetime
 from models.state import State
 
+
 class TestStateModel(unittest.TestCase):
     """TASK 10 UNIT TESTS"""
     def test_init(self):
