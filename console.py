@@ -55,12 +55,12 @@ class HBNBCommand(cmd.Cmd):
         if len(args) < 2:
             print("** instance id missing **")
             return
-        class_name, id = args[0], args[1]
+        class_name, iid = args[0], args[1]
         if class_name not in HBNBCommand.cls_lst:
             print("** class doesn't exist **")
             return
         objects = models.storage.all()
-        key = "{}.{}".format(class_name, id)
+        key = "{}.{}".format(class_name, iid)
         if key not in objects:
             print("** no instance found **")
             return
