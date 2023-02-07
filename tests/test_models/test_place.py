@@ -24,5 +24,6 @@ class TestPlaceModel(unittest.TestCase):
         self.assertIn("user_id", dir(aaru))
         self.assertNotIn("user_id", aaru.__dict__)
 
+
 if __name__ == "__main__":
     unittest.main()
