@@ -29,8 +29,8 @@ class FileStorage:
             with open(self.__file_path, encoding='utf-8') as fred:
                 richard = json.load(fred)
                 for key, value in richard.items():
-                    class_name, obj.__id__ = key.split(".")
-                    obj = eval(class_name)(**value)
+                    obj = eval(value['__class__'])(**value)
                     self.__objects[key] = obj
+
         except FileNotFoundError:
             pass
