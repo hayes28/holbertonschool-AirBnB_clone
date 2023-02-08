@@ -38,6 +38,5 @@ class FileStorage:
                 for key, value in richard.items():
                     obj = eval(value['__class__'])(**value)
                     self.__objects[key] = obj
-
         except FileNotFoundError:
             pass
