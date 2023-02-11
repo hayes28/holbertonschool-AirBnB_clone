@@ -102,7 +102,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def do_update(self, line):
-        """Usage: update {{class name}} {{instance}} {{attribute}} '{{value}}'"""
+        """Usage: update {class name} {instance} {attribute} '{value}'"""
         args = line.split(maxsplit=3)
         num_args = len(args)
         if num_args < 4:
