@@ -20,6 +20,11 @@ class TestFileStorage(unittest.TestCase):
         self.assertIsInstance(objects, dict)
         self.assertEqual(obj, objects["BaseModel.{}".format(obj.id)])
 
+    def test_reload(self):
+        storage1 = FileStorage()
+        storage1.reload()
+        self.assertTrue(len(storage1.all()) > 2)
+
     def test_new(self):
         obj = BaseModel()
         self.file_storage.new(obj)
@@ -34,11 +39,6 @@ class TestFileStorage(unittest.TestCase):
             file_content = json.load(file)
         self.assertEqual(obj.to_dict(),
                          file_content["BaseModel.{}".format(obj.id)])
-
-    def test_reload(self):
-        storage1 = FileStorage()
-        storage1.reload()
-        self.assertTrue(len(storage1.all()) > 2)
 
     def tearDown(self):
         if os.path.exists(self.file_path):
