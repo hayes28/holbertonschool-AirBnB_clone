@@ -40,7 +40,18 @@ class TestFileStorage(unittest.TestCase):
         storage1.reload()
         self.assertTrue(len(storage1.all()) > 2)
 
-    def test_rel2(self):
+    def tearDown(self):
+        if os.path.exists(self.file_path):
+            os.remove(self.file_path)
+
+
+class TestFileStorage2(unittest.TestCase)
+    """file storage uwunit tests"""
+    def setUp(self):
+        self.file_storage = FileStorage()
+        self.file_path = FileStorage._FileStorage__file_path
+
+    def test_reload(self):
         obj = BaseModel()
         self.file_storage.new(obj)
         self.file_storage.save()
