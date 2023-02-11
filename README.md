@@ -39,14 +39,22 @@ Exiting the console is as easy as Ctrl+D or the `EOF` command.
 | ------------------------------------------------------- | ------------------------------------------------- |
 | quit                                                    | returns true, breaking cmdloop                    |
 | EOF (Ctrl+D)                                            | prints goodbye msg to SO, then breaks loop        |
-| create {{Class Name}}                                   | creates an instance of specified class            |
+| create {{class name}}                                   | creates an instance of specified class            |
 | show {{class name}} {{instance}}                        | prints str rep of class instance given class & id |
 | destroy {{class name}} {{instance}}                     | destroy specified instance of class               |
 | all {{class name}}                                      | prints str rep of all class instances in mem      |
 | update {{class name}} {{instance}} {{attribute}} "{{value}}" | updates value of instance attribute in mem        |
 
 </p>
+<h3>Console.py examples:</h3>
+<p>
 
+First run the console from the repo's base directory with:
+```
+./console.py
+```
+
+</p>
 
 <h3>Console.py Interactive Exit Conditions</h3>
 <ul>
