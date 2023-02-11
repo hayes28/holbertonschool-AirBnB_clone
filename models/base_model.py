@@ -14,6 +14,8 @@ class BaseModel:
             *args (any): positional args
             **kwargs (dict): kv paired data
         """
+        self.id = str(uuid4())
+        self.created_at = self.updated_at = datetime.now()
         if kwargs:
             for ky, vl in kwargs.items():
                 if ky != '__class__':
@@ -22,8 +24,6 @@ class BaseModel:
                         setattr(self, ky, datetime.
                                 strptime(vl, '%Y-%m-%dT%H:%M:%S.%f'))
         else:
-            self.id = str(uuid4())
-            self.created_at = self.updated_at = datetime.now()
             models.storage.new(self)
 
     def __str__(self):
