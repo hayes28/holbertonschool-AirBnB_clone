@@ -42,7 +42,7 @@ Exiting the console is as easy as Ctrl+D or the `EOF` command.
 <h3>Console.py examples:</h3>
 <p>
 **WARNING:** Since BaseModel classes have their instance ids instantiated via uuid4() (universally unique identifier) 
-there's almost no chance that the instance you generate locally will have the same ids as the following tutorial.
+there's almost no chance that the instance(s) you generate locally will have the same id(s) as the following tutorial.
 
 First run the console from the repo's base directory with:
 ```
@@ -98,6 +98,15 @@ quit
 <li>3. The built-in exit method 'quit' is used, also causing a controlled exit</li>
 <li>4. A fatal program error occurs, and is most likely printed to stderr</li>
 </ul>
+
+<h3>Unit Testing:</h3>
+<p>
+Included test modules exist in the project's 'tests' directory and are discoverable with command:
+```
+python3 -m unittest discover tests
+```
+To-Do/WIP ... currently console.py does not have any associated automatable testing.
+</p>
 
 ## Authors
 [Heather Hayes](https://github.com/hayes28)<br />
