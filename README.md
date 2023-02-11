@@ -102,9 +102,11 @@ quit
 <h3>Unit Testing:</h3>
 <p>
 Included test modules exist in the project's 'tests' directory and are discoverable with command:
+
 ```
 python3 -m unittest discover tests
 ```
+
 To-Do/WIP ... currently console.py does not have any associated automatable testing.
 </p>
 
