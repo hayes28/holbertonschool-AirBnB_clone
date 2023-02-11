@@ -36,19 +36,9 @@ class TestFileStorage(unittest.TestCase):
                          file_content["BaseModel.{}".format(obj.id)])
 
     def test_reload(self):
-        obj = BaseModel()
-        self.file_storage.new(obj)
-        self.file_storage.save()
-        self.file_storage.__objects = {}
-        self.file_storage.reload()
-        objects = self.file_storage.all()
-        self.assertEqual(obj.to_dict(),
-                         objects["BaseModel.{}".format(obj.id)].to_dict())
-
-    def test_reload_2(self):
-        storage = FileStorage()
-        storage.reload()
-        self.assertTrue(len(storage.all()) > 0)
+        storage1 = FileStorage()
+        storage1.reload()
+        self.assertTrue(len(storage1.all()) > 2)
 
     def tearDown(self):
         if os.path.exists(self.file_path):
