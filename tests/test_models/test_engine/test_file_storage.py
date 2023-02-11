@@ -45,7 +45,7 @@ class TestFileStorage(unittest.TestCase):
             os.remove(self.file_path)
 
 
-class TestFileStorage2(unittest.TestCase)
+class TestFileStorage2(unittest.TestCase):
     """file storage uwunit tests"""
     def setUp(self):
         self.file_storage = FileStorage()
