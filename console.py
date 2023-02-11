@@ -19,20 +19,20 @@ class HBNBCommand(cmd.Cmd):
     res_att = ["created_at", "updated_at", "id"]
 
     def do_quit(self, line):
-        """escape hatch"""
+        """Usage: quit"""
         return True
 
     def do_EOF(self, line):
-        """give AOL message"""
+        """Usage: <Ctrl>+<D> to give AOL message"""
         print("Goodbye")
         return True
 
     def emptyline(self):
-        """no do stuff if empty line"""
+        """Usage: <Enter>"""
         pass
 
     def do_create(self, line):
-        """for to create"""
+        """Usage: create {{class name}}"""
         arg_str = line.split()
         if len(arg_str) == 0:
             print("** class name missing **")
@@ -49,7 +49,7 @@ class HBNBCommand(cmd.Cmd):
             pass
 
     def do_show(self, line):
-        """for to show"""
+        """Usage: show {{class name}} {{instance}}"""
         if line == "":
             print("** class name missing **")
             return
@@ -70,7 +70,7 @@ class HBNBCommand(cmd.Cmd):
         print(obj)
 
     def do_destroy(self, line):
-        """bombomb"""
+        """Usage: destroy {{class name}} {{instance}}"""
         if not line:
             print("** class name missing **")
             return
@@ -92,7 +92,7 @@ class HBNBCommand(cmd.Cmd):
         return
 
     def do_all(self, line):
-        """show us da tingz"""
+        """Usage: all {{class name}}"""
         if line == "":
             print([str(ii) for ii in storage.all().values()])
             return
@@ -102,7 +102,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def do_update(self, line):
-        """for can has update"""
+        """Usage: update {{class name}} {{instance}} {{attribute}} '{{value}}'"""
         args = line.split(maxsplit=3)
         num_args = len(args)
         if num_args < 4:
