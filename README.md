@@ -41,6 +41,8 @@ Exiting the console is as easy as Ctrl+D or the `EOF` command.
 </p>
 <h3>Console.py examples:</h3>
 <p>
+**WARNING:** Since BaseModel classes have their instance ids instantiated via uuid4() (universally unique identifier) 
+there's almost no chance that the instance you generate locally will have the same ids as the following tutorial.
 
 First run the console from the repo's base directory with:
 ```
