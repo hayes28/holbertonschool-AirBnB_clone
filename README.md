@@ -21,13 +21,33 @@ Exiting the console is as easy as Ctrl+D or the `EOF` command.
 [Chris Stamper](https://github.com/ZeroDayPoke)<br />
 ![Screenshot_20230205_081012](https://user-images.githubusercontent.com/107968573/216867070-beffb327-9caa-448f-8a25-b41b889e8a6d.png)
 
-<h3>CLASS INFO</h3>
+<h3>Class Info:</h3>
 <p>
 
 |            | BaseModel | User | State | City | Place | Review | Amenity | FileStorage |
 | ---------- | --------- | ---- | ----- | ---- | ----- | ------ | ------- | ----------- |
 | Defined In | models/base_model.py | models/user.py | models/state.py | models/city.py | models/place.py | models/review.py | models/amenity.py | models/engine/file_storage.py |
 | Inherits From | N/A | BaseModel | BaseModel | BaseModel | BaseModel | BaseModel | BaseModel | N/A |
-| Methods (Pub / Pri) | __str__(), save(), to_dict() Pub | Inh | Inh | Inh | Inh | Inh | Inh | all(), new(), save(), reload() Pub |
+| Methods (Pub / Pri) | __str__(), save(), to_dict() Pub | Inh | Inh | Inh | Inh | Inh | Inh | all(), new(obj), save(), reload() Pub |
 
 </p>
+
+<h3>Console.py do_{{command}} descriptions:</h3>
+<p>
+
+| **Command**                                      | **Descriptions**                           |
+| ------------------------------------------------ | ------------------------------------------ |
+| quit                                             | returns true, breaking cmdloop             |
+| EOF (Ctrl+D)                                     | prints goodbye msg to SO, then breaks loop |
+
+</p>
+
+
+<h3>Console.py Interactive Exit Conditions</h3>
+<ul>
+<li>1. It receives a SIGTERM (Ctrl + D) EOF signal, causing a controlled shutdown</li>
+<li>2. It receives a SIGKILL signal, whereafter undefined behavior may transpire</li>
+<li>3. The built-in exit method 'quit' is used, also causing a controlled exit</li>
+<li>4. A fatal program error occurs, and is most likely printed to stderr</li>
+</ul>
+
