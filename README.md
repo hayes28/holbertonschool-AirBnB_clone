@@ -93,7 +93,7 @@ then exit the console with the built in quit:
 ```
 quit
 ```
-![](https://github.com/ZeroDayPoke/holbertonschool-AirBnB_clone/console_tutorial.png)
+![](https://github.com/ZeroDayPoke/holbertonschool-AirBnB_clone/blob/master/console_tutorial.png)
 </p>
 
 <h3>Console.py Interactive Exit Conditions</h3>
