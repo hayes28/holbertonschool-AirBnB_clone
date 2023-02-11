@@ -32,13 +32,18 @@ Exiting the console is as easy as Ctrl+D or the `EOF` command.
 
 </p>
 
-<h3>Console.py do_{{command}} descriptions:</h3>
+<h3>Console.py do_{{command}} descriptions & usage:</h3>
 <p>
 
-| **Command**                                      | **Descriptions**                           |
-| ------------------------------------------------ | ------------------------------------------ |
-| quit                                             | returns true, breaking cmdloop             |
-| EOF (Ctrl+D)                                     | prints goodbye msg to SO, then breaks loop |
+| **Command / Usage**                                     | **Descriptions**                                  |
+| ------------------------------------------------------- | ------------------------------------------------- |
+| quit                                                    | returns true, breaking cmdloop                    |
+| EOF (Ctrl+D)                                            | prints goodbye msg to SO, then breaks loop        |
+| create {{Class Name}}                                   | creates an instance of specified class            |
+| show {{class name}} {{instance}}                        | prints str rep of class instance given class & id |
+| destroy {{class name}} {{instance}}                     | destroy specified instance of class               |
+| all {{class name}}                                      | prints str rep of all class instances in mem      |
+| update {{class name}} {{iid}} {{attribute}} "{{value}}" | updates value of instance attribute in mem        |
 
 </p>
 
