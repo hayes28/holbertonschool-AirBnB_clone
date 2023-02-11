@@ -21,8 +21,13 @@ Exiting the console is as easy as Ctrl+D or the `EOF` command.
 [Chris Stamper](https://github.com/ZeroDayPoke)<br />
 ![Screenshot_20230205_081012](https://user-images.githubusercontent.com/107968573/216867070-beffb327-9caa-448f-8a25-b41b889e8a6d.png)
 
+<h3>CLASS INFO</h3>
+<p>
+
 |            | BaseModel | User | State | City | Place | Review | Amenity | FileStorage |
 | ---------- | --------- | ---- | ----- | ---- | ----- | ------ | ------- | ----------- |
 | Defined In | models/base_model.py | models/user.py | models/state.py | models/city.py | models/place.py | models/review.py | models/amenity.py | models/engine/file_storage.py |
 | Inherits From | N/A | BaseModel | BaseModel | BaseModel | BaseModel | BaseModel | BaseModel | N/A |
 | Methods (Pub / Pri) | __str__(), save(), to_dict() Pub | Inh | Inh | Inh | Inh | Inh | Inh | all(), new(), save(), reload() Pub |
+
+</p>
