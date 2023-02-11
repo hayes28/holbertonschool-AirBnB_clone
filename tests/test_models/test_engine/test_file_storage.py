@@ -25,6 +25,16 @@ class TestFileStorage(unittest.TestCase):
         storage1.reload()
         self.assertTrue(len(storage1.all()) > 2)
 
+    def test_reload_2(self):
+        obj = BaseModel()
+        self.file_storage.new(obj)
+        self.file_storage.save()
+        self.file_storage.__objects = {}
+        self.file_storage.reload()
+        objects = self.file_storage.all()
+        self.assertEqual(obj.to_dict(),
+                         objects["BaseModel.{}".format(obj.id)].to_dict())
+
     def test_new(self):
         obj = BaseModel()
         self.file_storage.new(obj)
@@ -39,27 +49,6 @@ class TestFileStorage(unittest.TestCase):
             file_content = json.load(file)
         self.assertEqual(obj.to_dict(),
                          file_content["BaseModel.{}".format(obj.id)])
-
-    def tearDown(self):
-        if os.path.exists(self.file_path):
-            os.remove(self.file_path)
-
-
-class TestFileStorage2(unittest.TestCase):
-    """file storage uwunit tests"""
-    def setUp(self):
-        self.file_storage = FileStorage()
-        self.file_path = FileStorage._FileStorage__file_path
-
-    def test_reload(self):
-        obj = BaseModel()
-        self.file_storage.new(obj)
-        self.file_storage.save()
-        self.file_storage.__objects = {}
-        self.file_storage.reload()
-        objects = self.file_storage.all()
-        self.assertEqual(obj.to_dict(),
-                         objects["BaseModel.{}".format(obj.id)].to_dict())
 
     def tearDown(self):
         if os.path.exists(self.file_path):
