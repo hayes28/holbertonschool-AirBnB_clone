@@ -21,6 +21,6 @@ Exiting the console is as easy as Ctrl+D or the `EOF` command.
 [Chris Stamper](https://github.com/ZeroDayPoke)<br />
 ![Screenshot_20230205_081012](https://user-images.githubusercontent.com/107968573/216867070-beffb327-9caa-448f-8a25-b41b889e8a6d.png)
 
-| | BaseModel | User | State | City | Place | Review | Amenity | FileStorage
-| Defined In | models/base_model.py | models/user.py | models/state.py | models/city.py | models/place.py | models/review.py | models/amenity.py | models/engine/file_storage.py
-|   |  |
+| | BaseModel | User | State | City | Place | Review | Amenity | FileStorage |
+| Defined In | models/base_model.py | models/user.py | models/state.py | models/city.py | models/place.py | models/review.py | models/amenity.py | models/engine/file_storage.py |
+| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
