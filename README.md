@@ -14,13 +14,6 @@ By entering `./console.py` in the terminal a prompt will open up where the user 
 ![Screenshot 2023-02-05 200301](https://user-images.githubusercontent.com/107968573/216865604-01de94ad-1c7c-4e6c-ac06-caef81c48166.png)<br />
 Exiting the console is as easy as Ctrl+D or the `EOF` command.
 
-## Authors
-[Heather Hayes](https://github.com/hayes28)<br />
-![Screenshot_20230205_081038](https://user-images.githubusercontent.com/107968573/216867015-7086ad53-2d97-4739-95d4-494cef5288f2.png)
-
-[Chris Stamper](https://github.com/ZeroDayPoke)<br />
-![Screenshot_20230205_081012](https://user-images.githubusercontent.com/107968573/216867070-beffb327-9caa-448f-8a25-b41b889e8a6d.png)
-
 <h3>Class Info:</h3>
 <p>
 
@@ -104,3 +97,9 @@ quit
 <li>4. A fatal program error occurs, and is most likely printed to stderr</li>
 </ul>
 
+## Authors
+[Heather Hayes](https://github.com/hayes28)<br />
+![Screenshot_20230205_081038](https://user-images.githubusercontent.com/107968573/216867015-7086ad53-2d97-4739-95d4-494cef5288f2.png)
+
+[Chris Stamper](https://github.com/ZeroDayPoke)<br />
+![Screenshot_20230205_081012](https://user-images.githubusercontent.com/107968573/216867070-beffb327-9caa-448f-8a25-b41b889e8a6d.png)
