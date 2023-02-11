@@ -24,4 +24,4 @@ Exiting the console is as easy as Ctrl+D or the `EOF` command.
 |            | BaseModel | User | State | City | Place | Review | Amenity | FileStorage |
 | ---------- | --------- | ---- | ----- | ---- | ----- | ------ | ------- | ----------- |
 | Defined In | models/base_model.py | models/user.py | models/state.py | models/city.py | models/place.py | models/review.py | models/amenity.py | models/engine/file_storage.py |
-| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+| Inherits From | N/A | BaseModel | BaseModel | BaseModel | BaseModel | BaseModel | BaseModel | N/A |
