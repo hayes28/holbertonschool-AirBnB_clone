@@ -20,3 +20,8 @@ Exiting the console is as easy as Ctrl+D or the `EOF` command.
 
 [Chris Stamper](https://github.com/ZeroDayPoke)<br />
 ![Screenshot_20230205_081012](https://user-images.githubusercontent.com/107968573/216867070-beffb327-9caa-448f-8a25-b41b889e8a6d.png)
+
+| X Axis | Y Axis |
+|--------|--------|
+| (0,0)  | (0,1)  |
+| (1,0)  | (1,1)  |
