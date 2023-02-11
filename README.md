@@ -43,7 +43,7 @@ Exiting the console is as easy as Ctrl+D or the `EOF` command.
 | show {{class name}} {{instance}}                        | prints str rep of class instance given class & id |
 | destroy {{class name}} {{instance}}                     | destroy specified instance of class               |
 | all {{class name}}                                      | prints str rep of all class instances in mem      |
-| update {{class name}} {{iid}} {{attribute}} "{{value}}" | updates value of instance attribute in mem        |
+| update {{class name}} {{instance}} {{attribute}} "{{value}}" | updates value of instance attribute in mem        |
 
 </p>
 
