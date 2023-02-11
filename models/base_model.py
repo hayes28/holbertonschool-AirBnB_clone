@@ -1,37 +1,43 @@
 #!/usr/bin/python3
 """Base Model Module"""
-import uuid
-import datetime
+from uuid import uuid4
+from datetime import datetime
 import models
 
 
 class BaseModel:
-    """ARGS IMPLEMENT"""
+    """Base Model Template for ABNB Clone"""
     def __init__(self, *args, **kwargs):
+        """New Instance of BaseModel Initialized
+
+        Args:
+            *args (any): positional args
+            **kwargs (dict): kv paired data
+        """
         if kwargs:
             for ky, vl in kwargs.items():
                 if ky != '__class__':
                     setattr(self, ky, vl)
                     if ky in ('created_at', 'updated_at'):
-                        setattr(self, ky, datetime.datetime.
+                        setattr(self, ky, datetime.
                                 strptime(vl, '%Y-%m-%dT%H:%M:%S.%f'))
         else:
-            self.id = str(uuid.uuid4())
-            self.created_at = self.updated_at = datetime.datetime.now()
+            self.id = str(uuid4())
+            self.created_at = self.updated_at = datetime.now()
             models.storage.new(self)
 
     def __str__(self):
-        """STR METH"""
+        """simple string representation method"""
         bname = self.__class__.__name__
         return "[{}] ({}) {}".format(bname, self.id, self.__dict__)
 
     def save(self):
-        """UPDATE TIMESTAMP"""
-        self.updated_at = datetime.datetime.now()
+        """method that updates timestamp and saves"""
+        self.updated_at = datetime.now()
         models.storage.save()
 
     def to_dict(self):
-        """NEW RICHARD"""
+        """returns dictionary of BaseModel"""
         new_richard = self.__dict__.copy()
         new_richard["__class__"] = self.__class__.__name__
         new_richard["created_at"] = self.created_at.isoformat()
