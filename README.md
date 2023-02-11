@@ -25,3 +25,4 @@ Exiting the console is as easy as Ctrl+D or the `EOF` command.
 | ---------- | --------- | ---- | ----- | ---- | ----- | ------ | ------- | ----------- |
 | Defined In | models/base_model.py | models/user.py | models/state.py | models/city.py | models/place.py | models/review.py | models/amenity.py | models/engine/file_storage.py |
 | Inherits From | N/A | BaseModel | BaseModel | BaseModel | BaseModel | BaseModel | BaseModel | N/A |
+| Methods (Pub / Pri) | __str__(), save(), to_dict() Pub | Inh | Inh | Inh | Inh | Inh | Inh | all(), new(), save(), reload() Pub |
