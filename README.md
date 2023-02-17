@@ -110,7 +110,7 @@ python3 -m unittest discover tests
 To-Do/WIP ... currently console.py does not have any associated automatable testing.
 </p>
 
-## Authors
+## Authors:
 [Heather Hayes](https://github.com/hayes28)<br />
 ![Screenshot_20230205_081038](https://user-images.githubusercontent.com/107968573/216867015-7086ad53-2d97-4739-95d4-494cef5288f2.png)
 
