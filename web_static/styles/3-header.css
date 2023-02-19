@@ -6,7 +6,7 @@ header {
 }
 
 .logo {
-    background-image: url(https://s3.eu-west-3.amazonaws.com/hbtn.intranet.project.files/holbertonschool-higher-level_programming+/268/logo.png);
+    background-image: url('../images/logo.png');
     vertical-align: middle;
     margin-left: 20px;
     height: 100%;
