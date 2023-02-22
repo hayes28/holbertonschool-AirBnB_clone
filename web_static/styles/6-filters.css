@@ -64,17 +64,6 @@
     opacity: 90%;
 }
 
-.filters .popover {
-    background-color: #FAFAFA;
-    border: 1px solid #DDDDDD;
-    border-radius: 4px;
-    position: relative;
-    display: none;
-    width: 100%;
-    padding: 10px 0px 10px 25px;
-    z-index: 1;
-}
-
 .popover li, ul {
     margin: 10px, 50px;
 }
