@@ -6,6 +6,7 @@
     align-content: center;
     width: 100%;
     margin-top: 20px;
+    flex-basis: 90%;
 }
 
 .places article 
