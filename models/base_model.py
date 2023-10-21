@@ -29,7 +29,7 @@ class BaseModel:
     def __str__(self):
         """simple string representation method"""
         bname = self.__class__.__name__
-        return "[{}] ({}) {}".format(bname, self.id, self.__dict__)
+        return f"[{bname}] ({self.id}) {self.__dict__}"
 
     def save(self):
         """method that updates timestamp and saves"""

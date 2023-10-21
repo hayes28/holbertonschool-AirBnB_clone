@@ -62,7 +62,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
             return
         objects = models.storage.all()
-        key = "{}.{}".format(class_name, iid)
+        key = f"{class_name}.{iid}"
         if key not in objects:
             print("** no instance found **")
             return
@@ -82,12 +82,12 @@ class HBNBCommand(cmd.Cmd):
         if cname not in HBNBCommand.cls_lst:
             print("** class doesn't exist **")
             return
-        target = "{}.{}".format(cname, uwuid)
+        target = f"{cname}.{uwuid}"
         if target not in storage.all().keys():
             print("** no instance found **")
             return
         stor_rich = storage.all()
-        del stor_rich["{}.{}".format(cname, uwuid)]
+        del stor_rich[f"{cname}.{uwuid}"]
         storage.save()
         return
 
@@ -121,7 +121,7 @@ class HBNBCommand(cmd.Cmd):
         if args[0] not in HBNBCommand.cls_lst:
             print("** class doesn't exist **")
             return
-        key = "{}.{}".format(args[0], args[1])
+        key = f"{args[0]}.{args[1]}"
         target = storage.all().get(key)
         if target is None:
             print("** no instance found **")

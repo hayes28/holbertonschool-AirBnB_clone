@@ -18,7 +18,7 @@ class TestFileStorage(unittest.TestCase):
         self.file_storage.new(obj)
         objects = self.file_storage.all()
         self.assertIsInstance(objects, dict)
-        self.assertEqual(obj, objects["BaseModel.{}".format(obj.id)])
+        self.assertEqual(obj, objects[f"BaseModel.{obj.id}"])
 
     def test_reload(self):
         storage1 = FileStorage()
@@ -32,14 +32,13 @@ class TestFileStorage(unittest.TestCase):
         self.file_storage.__objects = {}
         self.file_storage.reload()
         objects = self.file_storage.all()
-        self.assertEqual(obj.to_dict(),
-                         objects["BaseModel.{}".format(obj.id)].to_dict())
+        self.assertEqual(obj.to_dict(), objects[f"BaseModel.{obj.id}"].to_dict())
 
     def test_new(self):
         obj = BaseModel()
         self.file_storage.new(obj)
         objects = self.file_storage.all()
-        self.assertEqual(obj, objects["BaseModel.{}".format(obj.id)])
+        self.assertEqual(obj, objects[f"BaseModel.{obj.id}"])
 
     def test_save(self):
         obj = BaseModel()
@@ -47,8 +46,7 @@ class TestFileStorage(unittest.TestCase):
         self.file_storage.save()
         with open(self.file_path, "r") as file:
             file_content = json.load(file)
-        self.assertEqual(obj.to_dict(),
-                         file_content["BaseModel.{}".format(obj.id)])
+        self.assertEqual(obj.to_dict(), file_content[f"BaseModel.{obj.id}"])
 
     def tearDown(self):
         if os.path.exists(self.file_path):
